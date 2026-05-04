@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #d1628c" class="test">
+<head>
+  <meta charset="UTF-8" />
+  <title>Barbie Radio</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header>
+    <h1>Barbie Digital Radio
+      
+    </h1>
+    <div class="popup" onclick="popup()">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-heart fa-stack-2x" style="transform: scale(0.5);"></i>
+        <i class="fa fa-info-circle fa-stack-1x fa-inverse" style="color: #d1628c; transform: scale(0.5);"></i> 
+      </span>
+        <span class="popuptext" id="popupText">
+          <p>Created by: <a href="https://heather-meatherall.github.io/" target="_blank" rel="noopener noreferrer">Heather Meatherall</a></p>
+          <p>Not affiliated with Barbie or Mattel</p>    
+        </span>
+    </div> 
+  </header>
+
+  <div class="container-flex">
+    <div class="cd-player">
+    <div class="cd-player-inner">
+      <div class="cd-player-center"></div>
+    </div>
+    <br>
+
+    <div class="buttons">
+      <button class="second-button stop"><i class="fa fa-stop"></i></button>
+      <button class="main-button" id="backward"><i class="fa fa-backward"></i></button>
+      <button class="main-button" id="forward"><i class="fa fa-forward "></i></button>
+      <button class="main-button play"><i class="fa fa-play"></i></button>
+      <button class="second-button repeat"><i class="fa fa-repeat"></i></button>
+    </div>
+    
+    <br>
+  </div>  
+
+  <div class="cd-box">
+    <div id="cd1" class="cd" draggable="true"></div>
+    <div id="cd2" class="cd" draggable="true"></div>
+    <div id="cd3" class="cd" draggable="true"></div>
+    <div id="cd4" class="cd" draggable="true"></div>
+
+    <audio id="dance"><source src="music/danceCD.m4a" id=dance"></audio>
+    <audio id="rock"><source src="music/rockCD.m4a" id="rock"></audio>
+    <audio id="hiphop"><source src="music/hiphopCD.m4a" id="hiphop"></audio>
+    <audio id="party"><source src="music/partyCD.m4a" id="party"></audio>
+    <audio id="demo"><source src="music/demo.m4a" id="demo"></audio>
+
+  </div>
+
+  </div>
+  
+
+</body>
+
+</html>
