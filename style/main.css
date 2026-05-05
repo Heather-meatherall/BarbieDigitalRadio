@@ -1,0 +1,284 @@
+
+
+/* Colours
+  pink: #d1628c;
+  teal: #6edfca;
+  purple: #65499b; 
+*/
+
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+    position: relative;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  background: #bc587e;
+  color: white;
+  font-size: 30px;
+}
+
+header h1 {
+    font-size: 50px;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  align-items; center;
+  background: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px
+}
+
+.main-button {
+    background-color: #d1628c;
+    border: none;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    box-shadow: 0px 6px #bc587e;
+}
+
+.main-button:active{
+    position:relative;
+    top:6px;
+    box-shadow: 0px 0px #bc587e;
+    background: #d1628c;
+}
+
+.second-button{
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 100%;
+}
+.stop{
+    background-color: #6edfca; 
+    box-shadow: 0px 6px #63c8b5;
+}
+.stop:active{
+    position:relative;
+    top:6px;
+    box-shadow: 0px 0px #63c8b5;
+}
+
+.repeat {
+    background-color: #65499b; 
+    box-shadow: 0px 6px #5a418b;
+}
+
+.repeat:active{
+    position:relative;
+    top:6px;
+    box-shadow: 0px 0px #5a418b;
+}
+
+
+.cd-player {
+    width: 500px;
+    height: 550px;
+    border-radius: 15%;
+    background: #eee;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    right: 50%;
+    top: 25%;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cd-player-inner {
+    min-width: 450px;
+    min-height: 450px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5), 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include centerer;
+    @include has-child;
+    &:before {
+        width: 100px;
+        height: 100px;
+        left: 0;
+        top: 75px;
+        background: #414141;
+        box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        z-index: -2;
+    }
+    &:after {
+        width: 20px;
+        height: 20px;
+        background: #242424;
+        left: 3px;
+        top: 115px;
+        border-radius: 50%;
+        box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.5), 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+.cd-player-center {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5), 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    @include centerer;
+   
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.cd {
+    width: 440px;
+    height: 440px;
+    background: radial-gradient(circle, transparent 25%, #65499b 25%, #65499b 35%, pink 35.5%);
+    -webkit-mask-image: radial-gradient(circle, transparent 25%, pink 25.5%);
+    mask-image: radial-gradient(circle, transparent 25%, pink 25.5%);
+    border: 10px solid #65499b;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+    pointer-events: auto;
+    cursor: grab
+}
+
+.active {
+    top: 50% !important;
+    left: 50% !important;
+}
+
+#cd1 {
+    left: 20%;
+    top: 60%;
+    background: radial-gradient(circle, transparent 25%, #65499b 25%, #65499b 30%, transparent 30.5%),
+                url("1.png") center/cover;
+}
+
+#cd2 {
+    left: 40%;
+    top: 60%;
+    background: radial-gradient(circle, transparent 25%, #65499b 25%, #65499b 30%, transparent 30.5%),
+                url("2.png") center/cover;
+    
+}
+
+#cd3 {
+    left: 60%;
+    top: 60%;
+    background: radial-gradient(circle, transparent 25%, #65499b 25%, #65499b 30%, transparent 30.5%),
+                url("3.png") center/cover;
+    
+}
+
+#cd4 {
+    left: 80%;
+    top: 60%;
+    background: radial-gradient(circle, transparent 25%, #65499b 25%, #65499b 30%, transparent 30.5%),
+                url("4.png") center/cover;
+}
+
+.is-spinning {
+    animation-play-state: running;
+}   
+
+.cd-box {
+    min-width: 400px;
+    min-height: 550px;
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    left: 60%;
+    
+}
+
+.popup a {
+    color: black;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 500px;
+  background-color: white;
+  color: #d1628c;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: 50px;
+  border: 1px solid white;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+  z-index: 1;
+}
+
+Add animation (fade in the popup)
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
