@@ -9,4 +9,4 @@ Audio taken from <a href="https://www.youtube.com/watch?v=7ORydOoLEUI">The Elect
 
 ## Demo Video
 
-[![Alt text](demoThumbnail)](https://youtu.be/ziLc9wGCVeo)
+[![Link to demo video](demoThumbnail.png)](https://youtu.be/ziLc9wGCVeo)
