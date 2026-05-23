@@ -240,6 +240,11 @@ header h1 {
     
 }
 
+.hover:hover {
+    top: 50% !important;
+}
+
+
 .popup a {
     color: black;
 }
@@ -282,3 +287,4 @@ Add animation (fade in the popup)
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+

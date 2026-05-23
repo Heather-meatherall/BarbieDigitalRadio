@@ -16,6 +16,7 @@ $(document).ready(function() {
                 x.pause();
             }
             cd = active.id;
+
             if (cd == "cd1")
         {
             x = document.getElementById("dance");
@@ -93,6 +94,7 @@ targets.forEach(target => {
                     selected.classList.remove('spin');
                     selected.classList.remove('is-spinning');
                     selected.classList.remove('active');
+                    selected.classList.add('hover');
                 }
 
                 // only lets cd be placed if there's no cd in the player
@@ -102,6 +104,7 @@ targets.forEach(target => {
                     active = selected;
                     selected.classList.add('spin');
                     selected.classList.add('active');
+                    selected.classList.remove('hover');
                 }
                 selected = null;
 
