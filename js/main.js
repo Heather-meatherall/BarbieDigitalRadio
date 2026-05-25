@@ -96,6 +96,8 @@ targets.forEach(target => {
                     selected.classList.remove('is-spinning');
                     selected.classList.remove('active');
                     selected.classList.add('hover');
+                    x.pause();
+                    x.currentTime = 0;
                 }
 
                 // only lets cd be placed if there's no cd in the player
