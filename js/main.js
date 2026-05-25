@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    x = document.getElementById("demo")
     //play
     $('.play').on('click', function() {
         
